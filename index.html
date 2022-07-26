@@ -1,8 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>TODO</title>
+	<script src="script.js"></script>
+	<link href="style.css" rel="stylesheet" />
   </head>
   <body>
+    <header>
+	  <h3>TODO items</h3>
+	</header>
+	<main>
+	  <ul id="todo-list">
+	  </ul>
+	  <fieldset>
+	    <input type="text" name="todo-text-input" id="todo-text-input" placeholder="todo item description" />
+	    <button id="todo-add-button">Add</button>
+	  </fieldset>
+	</main>
+	<footer>
+	</footer>
+    <template id="todo-item-template">
+	  <li name="todo-item"><button>Remove</button></li>
+	</template>
   </body>
 </html>
