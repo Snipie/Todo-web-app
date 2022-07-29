@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 function todoAddButtonClicked() {
 	var todoList = document.querySelector('#todo-list');
 	var todoTextInput = document.querySelector('#todo-text-input');
+	if(todoTextInput.value == '')
+		return;
 	addTodoItem(todoTextInput.value, todoList);
 	todoTextInput.value = '';
 	todoTextInput.focus();
@@ -22,6 +24,9 @@ function todoItemsContainerChanged(container) {
 	container.querySelectorAll('button').forEach(
 		e => e.addEventListener('click', removeButtonClicked)
 	);
+	
+	if(container.querySelectorAll('li').length > 0 && document.querySelector('#empty-notice'))
+		document.querySelector('#empty-notice').remove();
 }
 
 function todoItemClicked(e) {
@@ -42,7 +47,9 @@ function removeButtonClicked(e) {
 function addTodoItem(item_desc, container) {
 	var todoItemTemplate = document.querySelector('#todo-item-template');
 	var todoItem = todoItemTemplate.content.cloneNode(true);
-	todoItem.children[0].prepend(item_desc);
+	var todoItemDiv = document.createElement('div');
+	todoItemDiv.innerText = item_desc;
+	todoItem.children[0].prepend(todoItemDiv);
 	container.append(todoItem);
 	
 	todoItemsContainerChanged(container);
