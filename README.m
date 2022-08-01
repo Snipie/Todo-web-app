@@ -1,5 +1,5 @@
 Work in progress
 
-![demo](https://github.com/Snipie/Todo-web-app/blob/main/demo.gif)
+![demo](https://raw.githubusercontent.com/Snipie/Todo-web-app/main/demo.gif)
 
 This a repository where I put my results of trying to develop a simple todo web application.
